@@ -1,6 +1,4 @@
-# Aoc
-
-Advent of code 2024 - Elixir
+## Advent of code 2024 - Elixir
 
 If you want to run the code
 

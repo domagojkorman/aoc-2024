@@ -17,7 +17,7 @@ defmodule Aoc.Day01 do
   def solve_a(file \\ "day01.txt") do
     Utils.stream_file(file)
     |> Enum.reduce({[], []}, &parse_line/2)
-    |> then(&zip_columns/1)
+    |> zip_columns()
     |> Enum.reduce(0, &sum_diff/2)
   end
 
