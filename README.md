@@ -2,19 +2,12 @@
 
 Advent of code 2024 - Elixir
 
-## Installation
+If you want to run the code
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `aoc_2024` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:aoc_2024, "~> 0.1.0"}
-  ]
-end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/aoc_2024>.
+mkdir inputs
+touch inputs/day01.txt
+touch inputs/example01.txt
+nodemon --config nodemon.aoc.json -> to run all days with day.txt inputs
+nodemon --config nodemon.examples.json -> to run doctests with example.txt inputs
+```
