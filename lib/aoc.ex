@@ -1,5 +1,5 @@
 defmodule Aoc do
-  @modules [Aoc.Day01]
+  @modules [Aoc.Day01, Aoc.Day02]
 
   defp create_tasks(module) do
     [
@@ -15,7 +15,7 @@ defmodule Aoc do
   end
 
   defp print_output({{time, result}, index}) do
-    real_index = ceil(index / 2) + 1
+    real_index = floor(index / 2) + 1
     part = if rem(index, 2) == 0, do: "A", else: "B"
     seconds = (time / 1_000_000) |> Float.round(3)
     IO.puts("Solution \##{real_index}#{part} in #{seconds}s: #{result}")
