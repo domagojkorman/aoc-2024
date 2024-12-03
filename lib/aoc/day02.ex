@@ -24,10 +24,7 @@ defmodule Aoc.Day02 do
     valid_sublevels =
       Enum.with_index(levels)
       |> Enum.map(fn {_value, index} ->
-        first = Enum.take(levels, index)
-        second = Enum.slice(levels, (index + 1)..length(levels))
-        levels = Enum.concat(first, second)
-        validate_levels(levels)
+        validate_levels(List.delete_at(levels, index))
       end)
       |> Enum.count(fn v -> v end)
 
@@ -42,6 +39,8 @@ defmodule Aoc.Day02 do
   @doc """
   iex> Aoc.Day02.solve_a("example02.txt")
   2
+  iex> Aoc.Day02.solve_a()
+  559
   """
   def solve_a(file \\ "day02.txt") do
     Utils.stream_file(file)
@@ -54,6 +53,8 @@ defmodule Aoc.Day02 do
   @doc """
   iex> Aoc.Day02.solve_b("example02.txt")
   5
+  iex> Aoc.Day02.solve_b()
+  601
   """
   def solve_b(file \\ "day02.txt") do
     Utils.stream_file(file)

@@ -13,6 +13,8 @@ defmodule Aoc.Day01 do
   @doc """
   iex> Aoc.Day01.solve_a("example01.txt")
   11
+  iex> Aoc.Day01.solve_a()
+  1722302
   """
   def solve_a(file \\ "day01.txt") do
     Utils.stream_file(file)
@@ -24,6 +26,8 @@ defmodule Aoc.Day01 do
   @doc """
   iex> Aoc.Day01.solve_b("example01.txt")
   31
+  iex> Aoc.Day01.solve_b()
+  20373490
   """
   def solve_b(file \\ "day01.txt") do
     Utils.stream_file(file)
