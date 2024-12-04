@@ -2,7 +2,8 @@ defmodule Aoc do
   @modules [
     Aoc.Day01,
     Aoc.Day02,
-    Aoc.Day03
+    Aoc.Day03,
+    Aoc.Day04
   ]
 
   defp create_tasks(module) do
