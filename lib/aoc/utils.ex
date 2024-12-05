@@ -1,6 +1,7 @@
 defmodule Aoc.Utils do
   def read_file(file) do
     File.read!(Path.join("inputs", file))
+    |> String.split("\n\n")
   end
 
   def stream_file(file) do
