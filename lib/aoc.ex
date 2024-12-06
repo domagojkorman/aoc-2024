@@ -4,7 +4,8 @@ defmodule Aoc do
     Aoc.Day02,
     Aoc.Day03,
     Aoc.Day04,
-    Aoc.Day05
+    Aoc.Day05,
+    Aoc.Day06
   ]
 
   defp create_tasks(module) do
@@ -31,7 +32,7 @@ defmodule Aoc do
     @modules
     |> Enum.flat_map(&create_tasks/1)
     |> Enum.map(&run_task/1)
-    |> Enum.map(&Task.await/1)
+    |> Enum.map(&Task.await(&1, :timer.seconds(10)))
     |> Enum.with_index(0)
     |> Enum.each(&print_output/1)
   end
