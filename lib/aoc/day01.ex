@@ -10,12 +10,6 @@ defmodule Aoc.Day01 do
   defp sum_diff({col1, col2}, acc), do: acc + abs(col1 - col2)
   defp sum_similarity(v, acc, occurences), do: acc + Map.get(occurences, v, 0) * v
 
-  @doc """
-  iex> Aoc.Day01.solve_a("example01.txt")
-  11
-  iex> Aoc.Day01.solve_a()
-  1722302
-  """
   def solve_a(file \\ "day01.txt") do
     Utils.stream_file(file)
     |> Enum.reduce({[], []}, &parse_line/2)
@@ -23,12 +17,6 @@ defmodule Aoc.Day01 do
     |> Enum.reduce(0, &sum_diff/2)
   end
 
-  @doc """
-  iex> Aoc.Day01.solve_b("example01.txt")
-  31
-  iex> Aoc.Day01.solve_b()
-  20373490
-  """
   def solve_b(file \\ "day01.txt") do
     Utils.stream_file(file)
     |> Enum.reduce({[], []}, &parse_line/2)

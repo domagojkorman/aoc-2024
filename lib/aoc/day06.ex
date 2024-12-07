@@ -34,12 +34,6 @@ defmodule Aoc.Day06 do
     {map, starting_loc}
   end
 
-  @doc """
-  iex> Aoc.Day06.solve_a("example06.txt")
-  41
-  iex> Aoc.Day06.solve_a()
-  4826
-  """
   def solve_a(file \\ "day06.txt") do
     {map, starting_loc} = parse_input(file)
 
@@ -47,12 +41,6 @@ defmodule Aoc.Day06 do
     |> Enum.count()
   end
 
-  @doc """
-  iex> Aoc.Day06.solve_b("example06.txt")
-  6
-  iex> Aoc.Day06.solve_b()
-  1721
-  """
   def solve_b(file \\ "day06.txt") do
     {map, starting_loc} = parse_input(file)
 

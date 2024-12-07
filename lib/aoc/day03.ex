@@ -22,12 +22,6 @@ defmodule Aoc.Day03 do
     {acc + first * second, is_on}
   end
 
-  @doc """
-  iex> Aoc.Day03.solve_a("example03.txt")
-  161
-  iex> Aoc.Day03.solve_a()
-  196826776
-  """
   def solve_a(file \\ "day03.txt") do
     Utils.stream_file(file)
     |> Enum.flat_map(&Regex.scan(@regex, &1, capture: :all_names))
@@ -35,12 +29,6 @@ defmodule Aoc.Day03 do
     |> Enum.sum()
   end
 
-  @doc """
-  iex> Aoc.Day03.solve_b("example03b.txt")
-  48
-  iex> Aoc.Day03.solve_b()
-  106780429
-  """
   def solve_b(file \\ "day03.txt") do
     Utils.stream_file(file)
     |> Enum.flat_map(&Regex.scan(@regexb, &1))

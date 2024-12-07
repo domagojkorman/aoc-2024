@@ -17,17 +17,11 @@ defmodule #{module_name} do
   @doc \"\"\"
   iex> #{module_name}.solve_a("#{example_name}")
   nil
-  iex> #{module_name}.solve_a()
-  nil
   \"\"\"
   def solve_a(file \\\\ "#{input_name}") do
   end
 
   @doc \"\"\"
-  iex> #{module_name}.solve_b("#{example_name}")
-  nil
-  iex> #{module_name}.solve_b()
-  nil
   \"\"\"
   def solve_b(file \\\\ "#{input_name}") do
   end

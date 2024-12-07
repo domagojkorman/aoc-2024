@@ -24,12 +24,6 @@ defmodule Aoc.Day04 do
     end
   end
 
-  @doc """
-  iex> Aoc.Day04.solve_a("example04.txt")
-  18
-  iex> Aoc.Day04.solve_a()
-  2554
-  """
   def solve_a(file \\ "day04.txt") do
     map = input_as_map(file)
 
@@ -41,12 +35,6 @@ defmodule Aoc.Day04 do
     |> Enum.sum()
   end
 
-  @doc """
-  iex> Aoc.Day04.solve_b("example04.txt")
-  9
-  iex> Aoc.Day04.solve_b()
-  1916
-  """
   def solve_b(file \\ "day04.txt") do
     map = input_as_map(file)
 

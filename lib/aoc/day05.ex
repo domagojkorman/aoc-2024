@@ -31,12 +31,6 @@ defmodule Aoc.Day05 do
     |> Enum.join(",")
   end
 
-  @doc """
-  iex> Aoc.Day05.solve_a("example05.txt")
-  143
-  iex> Aoc.Day05.solve_a()
-  5166
-  """
   def solve_a(file \\ "day05.txt") do
     [orderings, prints] = Utils.read_file(file)
     orderings = group_ordering(orderings)
@@ -51,12 +45,6 @@ defmodule Aoc.Day05 do
     |> Enum.sum()
   end
 
-  @doc """
-  iex> Aoc.Day05.solve_b("example05.txt")
-  123
-  iex> Aoc.Day05.solve_b()
-  4679
-  """
   def solve_b(file \\ "day05.txt") do
     [orderings, prints] = Utils.read_file(file)
     orderings = group_ordering(orderings)

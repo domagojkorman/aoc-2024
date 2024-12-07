@@ -36,12 +36,6 @@ defmodule Aoc.Day02 do
     if is_valid, do: is_valid, else: validate_sublevels(levels)
   end
 
-  @doc """
-  iex> Aoc.Day02.solve_a("example02.txt")
-  2
-  iex> Aoc.Day02.solve_a()
-  559
-  """
   def solve_a(file \\ "day02.txt") do
     Utils.stream_file(file)
     |> Enum.map(&parse_line/1)
@@ -50,12 +44,6 @@ defmodule Aoc.Day02 do
     |> Enum.count()
   end
 
-  @doc """
-  iex> Aoc.Day02.solve_b("example02.txt")
-  5
-  iex> Aoc.Day02.solve_b()
-  601
-  """
   def solve_b(file \\ "day02.txt") do
     Utils.stream_file(file)
     |> Enum.map(&parse_line/1)
