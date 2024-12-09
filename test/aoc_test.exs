@@ -8,4 +8,5 @@ defmodule AocTest do
   # doctest Aoc.Day06
   # doctest Aoc.Day07
   # doctest Aoc.Day08
+  doctest Aoc.Day09
 end
