@@ -9,7 +9,8 @@ defmodule Aoc do
     Aoc.Day07,
     Aoc.Day08,
     Aoc.Day09,
-    Aoc.Day10
+    Aoc.Day10,
+    Aoc.Day11
   ]
 
   defp create_tasks(module) do
