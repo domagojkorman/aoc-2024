@@ -39,4 +39,11 @@ defmodule Aoc.Utils do
       :down_right -> {row + 1, col + 1}
     end
   end
+
+  def regex_scan(regex, string) do
+    Regex.scan(regex, string)
+    |> hd()
+    |> Enum.drop(1)
+    |> Enum.map(&String.to_integer/1)
+  end
 end

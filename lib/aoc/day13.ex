@@ -4,18 +4,11 @@ defmodule Aoc.Day13 do
   @regex_button ~r/^Button [A|B]: X\+(\d+), Y\+(\d+)$/
   @regex_prize ~r/^Prize: X=(\d+), Y=(\d+)$/
 
-  defp parse_line(line, regex) do
-    Regex.scan(regex, line)
-    |> hd()
-    |> Enum.drop(1)
-    |> Enum.map(&String.to_integer/1)
-  end
-
   defp parse_game(game) do
     [button_a, button_b, prize] = String.split(game, "\n")
-    [ax, ay] = parse_line(button_a, @regex_button)
-    [bx, by] = parse_line(button_b, @regex_button)
-    [px, py] = parse_line(prize, @regex_prize)
+    [ax, ay] = Utils.regex_scan(@regex_button, button_a)
+    [bx, by] = Utils.regex_scan(@regex_button, button_b)
+    [px, py] = Utils.regex_scan(@regex_prize, prize)
 
     %{
       ax: ax,
