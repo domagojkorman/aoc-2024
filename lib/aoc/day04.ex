@@ -12,7 +12,7 @@ defmodule Aoc.Day04 do
   defp input_as_map(file) do
     Utils.stream_file(file)
     |> Enum.map(&String.graphemes/1)
-    |> Utils.matrix_to_map()
+    |> Utils.grid_to_map()
   end
 
   defp check_word(direction, map, coord, word) do

@@ -28,7 +28,7 @@ defmodule Aoc.Day06 do
     map =
       Utils.stream_file(file)
       |> Enum.map(&String.graphemes/1)
-      |> Utils.matrix_to_map()
+      |> Utils.grid_to_map()
 
     starting_loc = Enum.find(map, fn {_key, value} -> value == "^" end) |> elem(0)
     {map, starting_loc}

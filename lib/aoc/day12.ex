@@ -6,7 +6,7 @@ defmodule Aoc.Day12 do
     |> hd()
     |> String.split("\n")
     |> Enum.map(&String.graphemes/1)
-    |> Utils.matrix_to_map()
+    |> Utils.grid_to_map()
   end
 
   defp is_neighbour({r1, c1}, {r2, c2}) do

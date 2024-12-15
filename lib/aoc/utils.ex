@@ -9,13 +9,19 @@ defmodule Aoc.Utils do
     |> Stream.map(fn l -> String.replace_suffix(l, "\n", "") end)
   end
 
-  def matrix_to_map(matrix) do
-    Enum.with_index(matrix)
+  def grid_to_map(grid) do
+    Enum.with_index(grid)
     |> Enum.reduce(%{}, fn {row, row_index}, map ->
       Enum.reduce(Enum.with_index(row), map, fn {value, col_index}, map ->
         Map.put(map, {row_index, col_index}, value)
       end)
     end)
+  end
+
+  def parse_grid(string) do
+    String.split(string, "\n")
+    |> Enum.map(&String.graphemes/1)
+    |> grid_to_map()
   end
 
   def next_coordinates(coord, diagonal \\ false) do
@@ -45,5 +51,21 @@ defmodule Aoc.Utils do
     |> hd()
     |> Enum.drop(1)
     |> Enum.map(&String.to_integer/1)
+  end
+
+  def grid_print_out(grid) do
+    {rows, cols} =
+      Enum.reduce(grid, {0, 0}, fn {{row, col}, _v}, {rows, cols} ->
+        {max(rows, row), max(cols, col)}
+      end)
+
+    Enum.each(0..rows, fn row ->
+      line =
+        Enum.map(0..cols, fn col ->
+          Map.get(grid, {row, col})
+        end)
+
+      IO.puts(Enum.join(line, ""))
+    end)
   end
 end
