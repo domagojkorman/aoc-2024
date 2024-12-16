@@ -120,6 +120,19 @@ defmodule Aoc.Day15 do
     {robot, warehouse, movements}
   end
 
+  def solve(file) do
+    {robot, warehouse, movements} = parse_input(file)
+
+    Enum.reduce(movements, {warehouse, robot}, fn movement, {warehouse, robot} ->
+      move(warehouse, robot, movement)
+    end)
+    |> elem(0)
+    |> Enum.map(fn {{row, col}, v} ->
+      if v == "O", do: row * 100 + col, else: 0
+    end)
+    |> Enum.sum()
+  end
+
   def solve_a(file \\ "day15.txt") do
     {robot, warehouse, movements} = parse_input(file)
 
