@@ -62,7 +62,7 @@ defmodule Aoc.Utils do
     Enum.each(0..rows, fn row ->
       line =
         Enum.map(0..cols, fn col ->
-          Map.get(grid, {row, col})
+          Map.get(grid, {row, col}, ".")
         end)
 
       IO.puts(Enum.join(line, ""))
